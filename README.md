@@ -3,16 +3,18 @@
 <br>
 ![7D2D v2.6](https://img.shields.io/badge/7D2D-v2.6-brightgreen)
 <br>
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A [7 Days to Die](https://store.steampowered.com/app/251570/7_Days_to_Die/) mod that adds a collection of quality of life improvements to questing.
 
 - Click a quest icon on the map to set it as your tracked quest
-- Automatically tracks the next closest unfinished quest once your current quest is ready for turn in
-- More coming soon...
+- Automatically tracks the next closest quest on quest advanced, completed or failed
 
 ## Installation
 Download the [latest release](https://github.com/DashTheDev/7D2D-EfficientQuesting/releases/latest), unzip and drop the `EfficientQuesting` folder into your game's `Mods` directory.
+
+> [!NOTE]  
+> Users only need to install this mod on the client!
 
 ## Development Setup
 1. Ensure you have [Visual Studio](https://visualstudio.microsoft.com/) and [7D2D](https://store.steampowered.com/app/251570/7_Days_to_Die/) installed

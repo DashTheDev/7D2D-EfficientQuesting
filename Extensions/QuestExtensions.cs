@@ -21,4 +21,19 @@ public static class QuestExtensions
 
         return null;
     }
+
+    public static bool IsAtHighestPhase(this Quest quest)
+    {
+        if (quest.QuestClass is null)
+        {
+            return false;
+        }
+
+        return quest.CurrentPhase == quest.QuestClass.HighestPhase;
+    }
+
+    public static bool IsCompletedOrFailed(this Quest quest)
+    {
+        return quest.CurrentState == Quest.QuestState.Completed || quest.CurrentState == Quest.QuestState.Failed;
+    }
 }

@@ -1,6 +1,6 @@
 ﻿namespace EfficientQuesting;
 
-public class Utility
+public static class GeneralUtility
 {
     public static void DebugLog(object str)
     {

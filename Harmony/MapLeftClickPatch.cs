@@ -9,7 +9,7 @@ public class MapLeftClickPatch
     [HarmonyPriority(Priority.Last)]
     static bool Prefix(XUiC_MapArea __instance, XUiController _sender, int _mouseButton)
     {
-        Utility.DebugLog($"Map left clicked!");
+        GeneralUtility.DebugLog($"Map left clicked!");
 
         EntityPlayerLocal? player = __instance.xui?.playerUI?.entityPlayer;
         QuestJournal? playerQuestJournal = player?.QuestJournal;
@@ -24,7 +24,7 @@ public class MapLeftClickPatch
 
         if (activeQuestNavObjectKeyDict.GetValueSafe(clickedNavObject.Key) is Quest foundQuest)
         {
-            playerQuestJournal.ToggleActiveQuest(foundQuest, player);
+            QuestUtility.ToggleActiveQuest(playerQuestJournal, foundQuest, player);
             __instance.closeAllPopups();
             return false;
         }

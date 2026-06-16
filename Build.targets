@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-	<Import Project="Local.props" Condition="Exists('Local.props')"/>
-
 	<Target Name="CopyOutputToDeployPath" AfterTargets="Build">
 		<Message Text="Copying output to $(DeployTargetPath)" Importance="high" />
 

@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-	<Import Project="Local.props" Condition="Exists('Local.props')"/>
-
 	<PropertyGroup>
 		<HarmonyPath>$(GamePath)\Mods\0_TFP_Harmony</HarmonyPath>
 		<GameDataPath>$(GamePath)\7DaysToDie_Data</GameDataPath>
