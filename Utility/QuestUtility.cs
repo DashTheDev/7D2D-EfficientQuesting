@@ -51,17 +51,17 @@ public static class QuestUtility
 
         if (journal.IsAlreadyTrackingQuest(nextActiveQuest))
         {
-            GeneralUtility.DebugLog("Already tracking quest!");
+            GeneralUtility.LogLine("Already tracking quest!");
             return;
         }
         else if (nextActiveQuest is not null)
         {
-            GeneralUtility.DebugLog("Found another quest to track!");
+            GeneralUtility.LogLine("Found another quest to track!");
             ToggleActiveQuest(journal, nextActiveQuest, player);
             return;
         }
 
-        GeneralUtility.DebugLog("Didn't find another quest to track!");
+        GeneralUtility.LogLine("Didn't find another quest to track!");
     }
 
     public static void ToggleActiveQuest(QuestJournal journal, Quest quest, EntityPlayerLocal? player = null)

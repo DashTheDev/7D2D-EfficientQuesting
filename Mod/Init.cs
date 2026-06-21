@@ -9,6 +9,7 @@ public partial class EfficientQuestingMod : IModApi
 {
     public static Mod ModInstance { get; private set; }
     public static EfficientQuestingConfig Config { get; private set; }
+    public static bool IsDebug => Config is not null && Config.IsDebug;
 
     public void InitMod(Mod _modInstance)
     {
@@ -17,7 +18,7 @@ public partial class EfficientQuestingMod : IModApi
         LoadConfig();
 
         Harmony harmony = new(_modInstance.Name);
-        harmony.PatchAll(Assembly.GetExecutingAssembly());
+        harmony.PatchAll(Assembly.GetExecutingAssembly()); 
     }
 
     private void LoadConfig()

@@ -63,6 +63,12 @@
       <Link>Config\Localization.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+		<None Include="Mod\Localization.csv" />
+		<None Include="Mod\Localization.csv">
+			<Visible>false</Visible>
+			<Link>Config\Localization.csv</Link>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

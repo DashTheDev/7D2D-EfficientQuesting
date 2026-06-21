@@ -7,7 +7,7 @@ public class QuestJournalCompleteQuestPatch
 {
     static void Postfix(QuestJournal __instance)
     {
-        GeneralUtility.DebugLog("QuestJournal complete quest!");
+        GeneralUtility.LogLine("QuestJournal complete quest!");
         QuestUtility.FindAndTrackNextQuest(__instance, __instance?.OwnerPlayer);
     }
 }

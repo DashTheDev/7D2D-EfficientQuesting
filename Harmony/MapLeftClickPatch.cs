@@ -9,7 +9,7 @@ public class MapLeftClickPatch
     [HarmonyPriority(Priority.Last)]
     static bool Prefix(XUiC_MapArea __instance, XUiController _sender, int _mouseButton)
     {
-        GeneralUtility.DebugLog($"Map left clicked!");
+        GeneralUtility.LogLine($"Map left clicked!");
 
         EntityPlayerLocal? player = __instance.xui?.playerUI?.entityPlayer;
         QuestJournal? playerQuestJournal = player?.QuestJournal;

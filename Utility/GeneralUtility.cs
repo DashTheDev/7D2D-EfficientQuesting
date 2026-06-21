@@ -2,7 +2,7 @@
 
 public static class GeneralUtility
 {
-    public static void DebugLog(object str)
+    public static void LogLine(object str)
     {
         if (!EfficientQuestingMod.Config.IsDebug)
         {

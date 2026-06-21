@@ -7,7 +7,7 @@ public class QuestJournalFailedQuestPatch
 {
     static void Postfix(QuestJournal __instance)
     {
-        GeneralUtility.DebugLog("QuestJournal failed quest!");
+        GeneralUtility.LogLine("QuestJournal failed quest!");
         QuestUtility.FindAndTrackNextQuest(__instance, __instance?.OwnerPlayer);
     }
 }
