@@ -10,5 +10,5 @@ public class EfficientQuestingConfig
     public bool IsDebug;
 #endif
 
-    public bool AllowUnlimitedQuests { get; set; } = true;
+    public bool AllowMultipleActiveQuests { get; set; } = true;
 }

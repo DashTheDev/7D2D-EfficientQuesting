@@ -8,7 +8,9 @@
 A [7 Days to Die](https://store.steampowered.com/app/251570/7_Days_to_Die/) mod that adds a collection of quality of life improvements to questing.
 
 - Click a quest icon on the map to set it as your tracked quest
+- Right click a quest icon on the map to open a quest context popup. There you can toggle tracking, remove, view details, share or teleport to
 - Automatically tracks the next closest quest on quest advanced, completed or failed
+- Allows the player to have more than one active quest at a time
 
 ## Installation
 Download the [latest release](https://github.com/DashTheDev/7D2D-EfficientQuesting/releases/latest), unzip and drop the `EfficientQuesting` folder into your game's `Mods` directory.

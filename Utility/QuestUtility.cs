@@ -69,6 +69,11 @@ public static class QuestUtility
 
     public static void ToggleActiveQuest(QuestJournal journal, Quest quest, EntityPlayerLocal? player = null)
     {
+        if (journal == null || quest == null)
+        {
+            return;
+        }
+
         if (journal.TrackedQuest == quest)
         {
             quest.Tracked = false;
@@ -83,9 +88,19 @@ public static class QuestUtility
         }
     }
 
+    public static void RemoveQuest(QuestJournal journal, Quest quest)
+    {
+        if (journal == null || quest == null)
+        {
+            return;
+        }
+
+        journal.RemoveQuest(quest);
+    }
+
     public static void AllowUnlimitedQuests()
     {
-        if (!EfficientQuestingMod.Config.AllowUnlimitedQuests)
+        if (!EfficientQuestingMod.Config.AllowMultipleActiveQuests)
         {
             return;
         }

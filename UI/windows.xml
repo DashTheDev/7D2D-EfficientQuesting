@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<windows>
+	<!-- Insert quest context map menu after waypoint map menu -->
+	<insertAfter xpath="/windows/window[@name='mapAreaSetWaypoint']">
+		<window name="mapAreaQuestContext" depth="7" pos="200,-200" width="200" height="227" cursor_area="true" >
+			<rect name="content" depth="0" pos="0,0" height="227">
+				<boxbg />
+				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+				<grid name="list" rows="5" cols="1" pos="6,-6" width="188" height="227" cell_height="43" repeat_content="false" arrangement="vertical" controller="EfficientQuesting.XUiC_MapQuestPopupList, EfficientQuesting">
+					<rect name="trackButton" depth="3" height="43" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
+						<sprite name="background" color="[darkGrey]" />
+						<sprite depth="4" name="Icon" sprite="ui_game_symbol_compass" style="icon32px" pos="8,-3"/>
+						<label depth="4" name="Name" pos="112,-20" width="150" height="28" text_key="xuiTrack" font_size="28" justify="center" pivot="center" />
+					</rect>
+					<rect name="untrackButton" depth="3" height="43" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
+						<sprite name="background" color="[darkGrey]" />
+						<sprite depth="4" name="Icon" sprite="ui_game_symbol_compass" style="icon32px" pos="8,-3"/>
+						<label depth="4" name="Name" pos="112,-20" width="150" height="28" text_key="xuiUntrack" font_size="28" justify="center" pivot="center"/>
+					</rect>
+					<rect name="removeButton" depth="3" height="43" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
+						<sprite name="background" color="[darkGrey]" />
+						<sprite depth="4" name="Icon" sprite="ui_game_symbol_quest_remove" style="icon32px" pos="8,-3"/>
+						<label depth="4" name="Name" pos="112,-20" width="150" height="28" text_key="xuiRemove" font_size="28" justify="center" pivot="center"/>
+					</rect>
+					<rect name="detailsButton" depth="3" height="43" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
+						<sprite name="background" color="[darkGrey]" />
+						<sprite depth="4" name="Icon" sprite="ui_game_symbol_challenge_crafting_read_magazine" style="icon32px" pos="8,-3"/>
+						<label depth="4" name="Name" pos="112,-20" width="150" height="28" text_key="xuiDetails" font_size="28" justify="center" pivot="center"/>
+					</rect>
+					<rect name="shareButton" depth="3" height="43" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
+						<sprite name="background" color="[darkGrey]" />
+						<sprite depth="4" name="Icon" sprite="ui_game_symbol_players" style="icon32px" pos="8,-3"/>
+						<label depth="4" name="Name" pos="112,-20" width="150" height="28" text_key="xuiShare" font_size="28" justify="center" pivot="center"/>
+					</rect>
+					<rect name="teleportToButton" depth="3" height="43" style="press" on_hover="true" on_scroll="false" disabled_font_color="148,148,148,255" controller="MapPopupEntry" sound="[craft_click]" sound_play_on_hover="[default_hover]">
+						<sprite name="background" color="[darkGrey]" />
+						<sprite depth="4" name="Icon" sprite="ui_game_symbol_go_to_button" style="icon32px" pos="8,-3"/>
+						<label depth="4" name="Name" pos="112,-20" width="150" height="28" text_key="xuiTeleportTo" font_size="28" justify="center" pivot="center"/>
+					</rect>
+				</grid>
+			</rect>
+		</window>
+	</insertAfter>
+</windows>

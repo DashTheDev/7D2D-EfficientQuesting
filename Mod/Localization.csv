@@ -1,3 +1,9 @@
 Key,English
 noLongerTrackingMsg,No longer tracking: {0}
 nowTrackingMsg,Now tracking: {0}
+xuiTrack,Track
+xuiUntrack,Untrack
+xuiShare,Share
+xuiRemove,Remove
+xuiDetails,Details
+xuiTeleportTo,Teleport to

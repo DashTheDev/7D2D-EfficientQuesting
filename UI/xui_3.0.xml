@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xui>
+	<!-- Insert quest context map window into map window group -->
+	<insertAfter xpath="/xui/window_group[@name='map']/window[@name='mapAreaSetWaypoint']">
+		<window name="mapAreaQuestContext" />
+	</insertAfter>
+</xui>
