@@ -9,4 +9,6 @@ public class EfficientQuestingConfig
 #else
     public bool IsDebug;
 #endif
+
+    public bool AllowUnlimitedQuests { get; set; } = true;
 }

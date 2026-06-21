@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using UnityEngine;
 
 namespace EfficientQuesting;
 
@@ -79,4 +82,45 @@ public static class QuestUtility
             player.ShowTooltip(LocalisationUtility.GetNowTrackingMessage(quest.QuestClass.Name));
         }
     }
+
+    public static void AllowUnlimitedQuests()
+    {
+        if (!EfficientQuestingMod.Config.AllowUnlimitedQuests)
+        {
+            return;
+        }
+
+        bool foundTraderDialog = Dialog.DialogList.TryGetValue("trader", out Dialog traderDialog);
+
+        if (!foundTraderDialog)
+        {
+            return;
+        }
+
+        DialogResponse? jobsNoneDialogResponse = traderDialog.Responses.FirstOrDefault(r => r.ID == "jobsnone");
+
+        if (jobsNoneDialogResponse != null)
+        {
+            traderDialog.Responses.Remove(jobsNoneDialogResponse);
+            GeneralUtility.LogLine("Removed jobsnone dialog response!");
+        }
+
+        IEnumerable<DialogResponse> jobsHaveDialogResponses = traderDialog.Responses.Where(r => IsJobsHaveID(r.ID));
+
+        foreach (DialogResponse jobsHaveDialogResponse in jobsHaveDialogResponses)
+        {
+            BaseDialogRequirement? questStateRequirement = jobsHaveDialogResponse.RequirementList.FirstOrDefault(r => r.RequirementType == BaseDialogRequirement.RequirementTypes.QuestStatus);
+
+            if (questStateRequirement == null)
+            {
+                continue;
+            }
+
+            jobsHaveDialogResponse.RequirementList.Remove(questStateRequirement);
+            GeneralUtility.LogLine("Removed dialog response quest state requirement!");
+        }
+    }
+
+    private static bool IsJobsHaveID(string id) => Regex.IsMatch(id, @"^jobshave[1-9]$");
+
 }
