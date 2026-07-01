@@ -54,17 +54,17 @@ public static class QuestUtility
 
         if (journal.IsAlreadyTrackingQuest(nextActiveQuest))
         {
-            GeneralUtility.LogLine("Already tracking quest!");
+            EfficientQuestingMod.Instance.Logger.LogLine("Already tracking quest!");
             return;
         }
         else if (nextActiveQuest is not null)
         {
-            GeneralUtility.LogLine("Found another quest to track!");
+            EfficientQuestingMod.Instance.Logger.LogLine("Found another quest to track!");
             ToggleActiveQuest(journal, nextActiveQuest, player);
             return;
         }
 
-        GeneralUtility.LogLine("Didn't find another quest to track!");
+        EfficientQuestingMod.Instance.Logger.LogLine("Didn't find another quest to track!");
     }
 
     public static void ToggleActiveQuest(QuestJournal journal, Quest quest, EntityPlayerLocal? player = null)
@@ -100,7 +100,7 @@ public static class QuestUtility
 
     public static void AllowUnlimitedQuests()
     {
-        if (!EfficientQuestingMod.Config.AllowMultipleActiveQuests)
+        if (!EfficientQuestingMod.Instance.Config.AllowMultipleActiveQuests)
         {
             return;
         }
@@ -117,7 +117,7 @@ public static class QuestUtility
         if (jobsNoneDialogResponse != null)
         {
             traderDialog.Responses.Remove(jobsNoneDialogResponse);
-            GeneralUtility.LogLine("Removed jobsnone dialog response!");
+            EfficientQuestingMod.Instance.Logger.LogLine("Removed jobsnone dialog response!");
         }
 
         IEnumerable<DialogResponse> jobsHaveDialogResponses = traderDialog.Responses.Where(r => IsJobsHaveID(r.ID));
@@ -132,10 +132,9 @@ public static class QuestUtility
             }
 
             jobsHaveDialogResponse.RequirementList.Remove(questStateRequirement);
-            GeneralUtility.LogLine("Removed dialog response quest state requirement!");
+            EfficientQuestingMod.Instance.Logger.LogLine("Removed dialog response quest state requirement!");
         }
     }
 
     private static bool IsJobsHaveID(string id) => Regex.IsMatch(id, @"^jobshave[1-9]$");
-
 }

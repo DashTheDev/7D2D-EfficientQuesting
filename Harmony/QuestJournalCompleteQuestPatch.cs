@@ -7,7 +7,7 @@ public class QuestJournalCompleteQuestPatch
 {
     static void Postfix(QuestJournal __instance)
     {
-        GeneralUtility.LogLine("QuestJournal complete quest!");
+        EfficientQuestingMod.Instance.Logger.LogLine("QuestJournal complete quest!");
         QuestUtility.FindAndTrackNextQuest(__instance, __instance?.OwnerPlayer);
     }
 }

@@ -10,7 +10,7 @@ public class MapAreaUIPatches
     [HarmonyPatch(nameof(XUiC_MapArea.onMapPressedLeft))]
     static bool LeftClickPrefix(XUiC_MapArea __instance, XUiController _sender, int _mouseButton)
     {
-        GeneralUtility.LogLine($"Map left clicked!");
+        EfficientQuestingMod.Instance.Logger.LogLine($"Map left clicked!");
 
         Quest? clickedQuest = GetQuestFromClickedNavObject(__instance);
 
@@ -29,7 +29,7 @@ public class MapAreaUIPatches
     [HarmonyPatch(nameof(XUiC_MapArea.onMapPressed))]
     static bool RightClickPrefix(XUiC_MapArea __instance, XUiController _sender, int _mouseButton)
     {
-        GeneralUtility.LogLine($"Map right clicked!");
+        EfficientQuestingMod.Instance.Logger.LogLine($"Map right clicked!");
 
         Quest? clickedQuest = GetQuestFromClickedNavObject(__instance);
 
