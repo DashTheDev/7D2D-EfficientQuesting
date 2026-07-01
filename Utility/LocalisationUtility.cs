@@ -1,4 +1,6 @@
-﻿namespace EfficientQuesting;
+﻿using DashTheDev.SDTD.ModCore;
+
+namespace EfficientQuesting;
 
 public static class LocalisationUtility
 {

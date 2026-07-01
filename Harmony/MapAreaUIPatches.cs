@@ -70,12 +70,7 @@ public class MapAreaUIPatches
         XUiV_Window window = mapArea.xui.GetMapAreaQuestContextWindow();
         window.Controller.TryGetChildController("", out XUiC_MapQuestPopupList questPopupList);
         questPopupList?.Quest = quest;
-#if V2_6_0
-        questPopupList?.OnVisibilityChanged(true);
-        window.Position = mapArea.xui.GetMouseXUIPosition();
-#else
         window.Position = mapArea.xui.GetMouseXUiPosition();
-#endif
         window.IsVisible = true;
     }
 }

@@ -44,11 +44,7 @@ public class XUiC_MapQuestPopupList : XUiController
         SubscribeToButtonPresses();
     }
 
-#if V2_6_0
-    private void OnVisiblityChanged(XUiController _sender, bool _visible)
-#else
     private void OnVisiblityChanged(XUiController _sender, bool _visible, bool _visibleInScene)
-#endif
     {
         if (!_visible)
         {
@@ -68,7 +64,7 @@ public class XUiC_MapQuestPopupList : XUiController
         }
     }
 
-#endregion
+    #endregion
 
     #region Event Handling
 

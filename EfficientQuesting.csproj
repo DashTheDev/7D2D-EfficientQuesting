@@ -39,7 +39,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Extensions\XUiExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Harmony\MapAreaUIPatches.cs" />
     <Compile Include="Harmony\QuestJournalCompleteQuestPatch.cs" />
     <Compile Include="Harmony\CreateDialogsPatch.cs" />
@@ -55,44 +54,23 @@
     <Compile Include="Mod\EfficientQuestingConfig.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Mod\ModInfo.xml" />
+    <None Include="LICENSE.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Mod\ModInfo.xml">
-      <Link>ModInfo.xml</Link>
+      <TargetPath>ModInfo.xml</TargetPath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Mod\Localization.txt" />
-    <None Include="Mod\Localization.txt" Condition="'$(GameVersion)' == 'V2_6'">
-      <Visible>false</Visible>
-      <Link>Config\Localization.txt</Link>
+    <None Include="Mod\Localization.csv">
+      <TargetPath>Config\Localization.csv</TargetPath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Mod\Localization.csv" />
-    <None Include="Mod\Localization.csv" Condition="'$(GameVersion)' == 'V3_0'">
-      <Visible>false</Visible>
-      <Link>Config\Localization.csv</Link>
+    <None Include="UI\windows.xml">
+      <TargetPath>Config\XUi_InGame\windows.xml</TargetPath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="UI\windows.xml" />
-    <None Include="UI\windows.xml" Condition="'$(GameVersion)' == 'V2_6'">
-      <Visible>false</Visible>
-      <Link>Config\XUi\windows.xml</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="UI\windows.xml" Condition="'$(GameVersion)' == 'V3_0'">
-      <Visible>false</Visible>
-      <Link>Config\XUi_InGame\windows.xml</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="UI\xui_2.6.xml" />
-    <None Include="UI\xui_2.6.xml" Condition="'$(GameVersion)' == 'V2_6'">
-      <Visible>false</Visible>
-      <Link>Config\XUi\xui.xml</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="UI\xui_3.0.xml" />
-    <None Include="UI\xui_3.0.xml" Condition="'$(GameVersion)' == 'V3_0'">
-      <Visible>false</Visible>
-      <Link>Config\XUi_InGame\xui.xml</Link>
+    <None Include="UI\xui.xml">
+      <TargetPath>Config\XUi_InGame\xui.xml</TargetPath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
