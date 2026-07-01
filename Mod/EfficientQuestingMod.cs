@@ -2,4 +2,4 @@
 
 namespace EfficientQuesting;
 
-public class EfficientQuestingMod : BaseMod<EfficientQuestingMod, EfficientQuestingConfig>;
+public class EfficientQuestingMod : BaseMod<EfficientQuestingMod, EfficientQuestingConfig>, IModApi;
